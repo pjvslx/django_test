@@ -1,0 +1,84 @@
+<html>
+ <head>
+    <style>
+    </style>
+</head>
+<body>
+
+
+<table border="0" id="mytable">
+    <tr>
+        <th>
+            结构体名
+        </th>
+        <th>
+            字段名
+        </th>
+        <th>
+            字段类型
+        </th>
+    </tr>
+
+    <tr>
+        <td rowspan="100">
+            <b>MSG_PLAYER_INFO</b>
+        </td>
+        <td>
+            <input type = "text" name = "fieldname">
+        </td>
+        <td>
+            <select name = "select1" size="1">
+                <option>uint32</option>
+                <option>int32</option>
+                <option>bool</option>
+                <option>string</option>
+                <option>uint64</option>
+                <option>int64</option>
+            </select>
+        </td>
+    </tr>
+    <script>
+    function newField()
+    {
+        var table = document.getElementById("mytable")
+        var tr = document.createElement("tr")
+        table.appendChild(tr)
+        var td1 = document.createElement("td")
+        tr.appendChild(td1)
+        var td2 = document.createElement("td")
+        tr.appendChild(td2)
+        var input = document.createElement("input")
+        input.setAttribute("type","text")
+        input.setAttribute("name","fieldname1")
+        td2.appendChild(input)
+        var td3 = document.createElement("td")
+        tr.appendChild(td3)
+        var select = document.createElement("select")
+        select.setAttribute("size","1")
+        select.setAttribute("name","select1")
+        td3.appendChild(select)
+        var option1 = document.createElement("option")
+        option1.innerHTML = "uint32"
+        var option2 = document.createElement("option")
+        option2.innerHTML = "int32"
+        var option3 = document.createElement("option")
+        option2.innerHTML = "bool"
+        var option4 = document.createElement("option")
+        option2.innerHTML = "string"
+        var option5 = document.createElement("option")
+        option2.innerHTML = "uint64"
+        var option6 = document.createElement("option")
+        option2.innerHTML = "int64"
+        select.appendChild(option1)
+        select.appendChild(option2)
+    }
+</script>
+</table>
+
+<button onclick="newField()">增加字段</button>
+
+<table>
+
+</table>
+</body>
+</html>
