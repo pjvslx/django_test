@@ -1,8 +1,6 @@
-.\.idea\.name = 94d902e5972af4ad5e09500e82f5ba21
-.\.idea\encodings.xml = e983e7004bf05890eb93973f0a475914
-.\.idea\md5_tool.iml = a3d11079520b18e3f6780291d1152696
-.\.idea\misc.xml = 6d4172bb112ea04c2192000871453ca8
-.\.idea\modules.xml = 65301f165e167c137aa6d9df075e9e4f
-.\.idea\workspace.xml = 95d1b776e7a5588ee72c67fd417a7af4
-.\config = d41d8cd98f00b204e9800998ecf8427e
-.\md5_tool.py = c489991677756549e9d08c391bdc149f
+.idea/.name=94d902e5972af4ad5e09500e82f5ba21
+.idea/encodings.xml=e983e7004bf05890eb93973f0a475914
+.idea/md5_tool.iml=a3d11079520b18e3f6780291d1152696
+.idea/misc.xml=6d4172bb112ea04c2192000871453ca8
+.idea/modules.xml=65301f165e167c137aa6d9df075e9e4f
+.idea/workspace.xml=e044ae1949043ee381c45b410968b782
