@@ -4,7 +4,6 @@ import os
 
 global content
 global object_data
-global element_arr
 
 element_arr = []
 
@@ -49,6 +48,7 @@ def is_ui_namespace(code_type):
     return True
 
 def parse_node(node,parent_name):
+    global element_arr
     for child in node:
         if cmp(child.tag, "NodeObjectData") == 0:
             name = child.attrib['Name']
@@ -73,6 +73,8 @@ def parse_node(node,parent_name):
 
 
 def parse_file(filename):
+    global element_arr
+    element_arr = []
     if not filename.endswith(".csd") or not os.path.exists(filename):
         print "there is no file " + filename + " or the filename is not end with csd"
     #'beast_jackpot.csd'
@@ -113,6 +115,8 @@ def parse_file(filename):
 
     output_h_file(filename, element_arr, node_or_layer)
     output_cpp_file(filename, element_arr, node_or_layer)
+
+    element_arr = []
 
 def output_h_file(csbfilename,arr,root_type):
     print "output_h_file filename = " + csbfilename
@@ -304,6 +308,8 @@ def output_cpp_file(csbfilename,arr,root_type):
 
     fp.write("}\n")
     fp.write("/*************************工具生成end*************************/\n")
+    fp.flush()
+    fp.close()
     pass
 
 parse_file('lottery_record_cell_node.csd')
