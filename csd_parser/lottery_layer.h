@@ -5,11 +5,10 @@
 
 namespace cocos2d {
     namespace ui {
-        class cocos2d::ui::ImageView*
-        class cocos2d::ui::Button*
-        class cocos2d::Node*
-        class cocos2d::ui::Text*
-        class cocos2d::ui::PageView*
+        class ImageView;
+        class Button;
+        class Text;
+        class PageView;
     }
 }
 

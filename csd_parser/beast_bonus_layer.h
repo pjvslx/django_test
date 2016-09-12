@@ -12,16 +12,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class .\beast_bonus_layer
+class beast_bonus_layer
     : public cocos2d::Layer
     , public hydra::ControlHandler
 {
 public:
-    static .\beast_bonus_layer* create();
+    static beast_bonus_layer* create();
 
 private:
-    .\beast_bonus_layer();
-    ~.\beast_bonus_layer();
+    beast_bonus_layer();
+    ~beast_bonus_layer();
 
     bool init();
 /*************************工具生成函数*************************/

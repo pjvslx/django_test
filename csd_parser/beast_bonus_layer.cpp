@@ -1,4 +1,4 @@
-#include ".\beast_bonus_layer.h"
+#include "beast_bonus_layer.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"
@@ -9,7 +9,7 @@ USING_NS_CC;
 using namespace hydra;
 using namespace ui;
 using namespace std;
-.\beast_bonus_layer::.\beast_bonus_layer()
+beast_bonus_layer::beast_bonus_layer()
   : Image_back(nullptr)
   : Text_winner_nick(nullptr)
   : Node_winner_avatar(nullptr)
@@ -33,13 +33,13 @@ using namespace std;
 }
 
 
-.\beast_bonus_layer::~.\beast_bonus_layer()
+beast_bonus_layer::~beast_bonus_layer()
 {
 }
 
-.\beast_bonus_layer* .\beast_bonus_layer::create()
+beast_bonus_layer* beast_bonus_layer::create()
 {
-    .\beast_bonus_layer *view = new .\beast_bonus_layer;
+    beast_bonus_layer *view = new beast_bonus_layer;
     if (view && view->init())
     {
         view->autorelease();
@@ -52,20 +52,20 @@ using namespace std;
         return nullptr;
     }
 }
-bool .\beast_bonus_layer::init()
+bool beast_bonus_layer::init()
 {
     if(!Layer::init())
     {
         return false;
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
-	auto entryNode = rm->createNodeWithType(.\beast_bonus_layer, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(beast_bonus_layer, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	return true;
 }
 /*************************工具生成begin*************************/
-void .\beast_bonus_layer::__setupCocosUI(Node* rootNode)
+void beast_bonus_layer::__setupCocosUI(Node* rootNode)
 {
 	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back");
 	Text_winner_nick = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_winner_nick");

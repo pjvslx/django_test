@@ -77,6 +77,7 @@ def parse_file(filename):
     element_arr = []
     if not filename.endswith(".csd") or not os.path.exists(filename):
         print "there is no file " + filename + " or the filename is not end with csd"
+        return
     #'beast_jackpot.csd'
     tree = ET.parse(filename)
     root = tree.getroot()
@@ -312,6 +313,20 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.close()
     pass
 
-parse_file('lottery_record_cell_node.csd')
+# parse_file('lottery_record_cell_node.csd')
 
+def work(path):
+    l = os.listdir(path)
+    for f in l:
+        if os.path.isdir(os.path.join(path,f)):
+            work(os.path.join(path,f))
+        else:
+            full_path = os.path.join(path,f)
+            pos = full_path.find(".\\")
+            if pos >= 0:
+                full_path = full_path[pos+2:len(full_path)]
+
+            parse_file(full_path)
+
+work(os.path.curdir)
 
