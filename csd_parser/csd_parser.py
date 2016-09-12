@@ -42,6 +42,11 @@ def get_code_type(type):
     else:
         return ""
 
+def is_ui_namespace(code_type):
+    pos = code_type.find("ui")
+    if pos < 0:
+        return False
+    return True
 
 def parse_node(node,parent_name):
     for child in node:
@@ -138,8 +143,13 @@ def output_h_file(csbfilename,arr,root_type):
                 exist = 1
                 break
         print "code_type = " + code_type , "exist",exist
-        if not cmp(code_type,"") == 0 and exist == 0:
-            fp.write("        class " + code_type + "\n")
+
+        is_ui = is_ui_namespace(code_type)
+
+        if not cmp(code_type,"") == 0 and exist == 0 and is_ui == True:
+            class_pos = code_type.rfind("::")
+            new_code_type = code_type[class_pos + 2: len(code_type) - 1]
+            fp.write("        class " + new_code_type + ";\n")
             type_arr.append(code_type)
 
     fp.write("    }\n")

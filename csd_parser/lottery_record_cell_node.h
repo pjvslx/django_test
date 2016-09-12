@@ -5,9 +5,8 @@
 
 namespace cocos2d {
     namespace ui {
-        class cocos2d::Node*
-        class cocos2d::ui::ImageView*
-        class cocos2d::ui::Text*
+        class ImageView;
+        class Text;
     }
 }
 
