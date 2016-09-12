@@ -47,6 +47,13 @@ def is_ui_namespace(code_type):
         return False
     return True
 
+def is_ui_ignore(element):
+    ui_name = element.get_name()
+    pos = ui_name.find("_ignore")
+    if pos >= 0:
+        return True
+    return False
+
 def parse_node(node,parent_name):
     global element_arr
     for child in node:
@@ -151,7 +158,7 @@ def output_h_file(csbfilename,arr,root_type):
 
         is_ui = is_ui_namespace(code_type)
 
-        if not cmp(code_type,"") == 0 and exist == 0 and is_ui == True:
+        if not cmp(code_type,"") == 0 and exist == 0 and is_ui == True and is_ui_ignore(element) == False:
             class_pos = code_type.rfind("::")
             new_code_type = code_type[class_pos + 2: len(code_type) - 1]
             fp.write("        class " + new_code_type + ";\n")
@@ -188,10 +195,11 @@ def output_h_file(csbfilename,arr,root_type):
     fp.write("/*************************工具生成开始*************************/\n")
 
     for element in arr:
-        type = element.get_type()
-        name = element.get_name()
-        code_type = get_code_type(type)
-        fp.write("	" + code_type + " " + name + "\n")
+        if is_ui_ignore(element) == False:
+            type = element.get_type()
+            name = element.get_name()
+            code_type = get_code_type(type)
+            fp.write("	" + code_type + " " + name + "\n")
 
     fp.write("/*************************工具生成结束*************************/\n")
 
@@ -228,11 +236,12 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.write(class_name + "::" + class_name + "()\n")
     index = 1
     for element in arr:
-        name = element.get_name()
-        if index == 1:
-            fp.write("  : " + name + "(nullptr)\n")
-        else:
-            fp.write("  , " + name + "(nullptr)\n")
+        if is_ui_ignore(element) == False:
+            name = element.get_name()
+            if index == 1:
+                fp.write("  : " + name + "(nullptr)\n")
+            else:
+                fp.write("  , " + name + "(nullptr)\n")
 
     fp.write("{\n")
     fp.write("}\n")
@@ -286,25 +295,26 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.write("void " + class_name + "::__setupCocosUI(Node* rootNode)\n")
     fp.write("{\n")
     for element in arr:
-        name = element.get_name()
-        type = element.get_type()
-        code_type = get_code_type(type)
-        path = element.get_path()
-        fp.write("	" + name + " = static_cast<" + code_type + ">(rootNode")
+        if is_ui_ignore(element) == False:
+            name = element.get_name()
+            type = element.get_type()
+            code_type = get_code_type(type)
+            path = element.get_path()
+            fp.write("	" + name + " = static_cast<" + code_type + ">(rootNode")
 
-        while 1:
-            pos1 = path.find('|')
-            if pos1 < 0:
-                break
-            else:
-                path = path[pos1+1:len(path)]
-                pos2 = path.find('|')
-                if pos2 < 0:
-                    subname = path[0:len(path)]
-                    fp.write("->getChildByName(\"" + subname + "\");\n")
+            while 1:
+                pos1 = path.find('|')
+                if pos1 < 0:
+                    break
                 else:
-                    subname = path[0:pos2]
-                    fp.write("->getChildByName(\"" + subname + "\")")
+                    path = path[pos1+1:len(path)]
+                    pos2 = path.find('|')
+                    if pos2 < 0:
+                        subname = path[0:len(path)]
+                        fp.write("->getChildByName(\"" + subname + "\");\n")
+                    else:
+                        subname = path[0:pos2]
+                        fp.write("->getChildByName(\"" + subname + "\")")
 
 
     fp.write("}\n")
