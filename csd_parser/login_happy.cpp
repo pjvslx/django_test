@@ -11,14 +11,14 @@ using namespace ui;
 using namespace std;
 login_happy::login_happy()
   : bg(nullptr)
-  : light1(nullptr)
-  : light2(nullptr)
-  : light3(nullptr)
-  : star(nullptr)
-  : logo(nullptr)
-  : loading_bar_bg(nullptr)
-  : LoadingBar(nullptr)
-  : flash(nullptr)
+  , light1(nullptr)
+  , light2(nullptr)
+  , light3(nullptr)
+  , star(nullptr)
+  , logo(nullptr)
+  , loading_bar_bg(nullptr)
+  , LoadingBar(nullptr)
+  , flash(nullptr)
 {
 }
 
@@ -42,6 +42,7 @@ login_happy* login_happy::create()
         return nullptr;
     }
 }
+
 bool login_happy::init()
 {
     if(!Layer::init())
@@ -54,17 +55,18 @@ bool login_happy::init()
 	__setupCocosUI(entryNode);
 	return true;
 }
+
 /*************************工具生成begin*************************/
 void login_happy::__setupCocosUI(Node* rootNode)
 {
-	bg = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("bg");
-	light1 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light1");
-	light2 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light2");
-	light3 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light3");
-	star = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("star");
-	logo = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("logo");
-	loading_bar_bg = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("loading_bar_bg");
-	LoadingBar = static_cast<cocos2d::ui::LoadingBar*>(rootNode->getChildByName("loading_bar_bg")->getChildByName("LoadingBar");
-	flash = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("loading_bar_bg")->getChildByName("flash");
+	bg = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("bg"));
+	light1 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light1"));
+	light2 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light2"));
+	light3 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light3"));
+	star = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("star"));
+	logo = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("logo"));
+	loading_bar_bg = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("loading_bar_bg"));
+	LoadingBar = static_cast<cocos2d::ui::LoadingBar*>(rootNode->getChildByName("loading_bar_bg")->getChildByName("LoadingBar"));
+	flash = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("loading_bar_bg")->getChildByName("flash"));
 }
 /*************************工具生成end*************************/

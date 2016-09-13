@@ -11,10 +11,10 @@ using namespace ui;
 using namespace std;
 lottery_record_cell_node::lottery_record_cell_node()
   : Node_avatar(nullptr)
-  : Image_back(nullptr)
-  : Text_time(nullptr)
-  : Text_nickname(nullptr)
-  : Text_money(nullptr)
+  , Image_back(nullptr)
+  , Text_time(nullptr)
+  , Text_nickname(nullptr)
+  , Text_money(nullptr)
 {
 }
 
@@ -38,6 +38,7 @@ lottery_record_cell_node* lottery_record_cell_node::create()
         return nullptr;
     }
 }
+
 bool lottery_record_cell_node::init()
 {
     if(!Node::init())
@@ -50,13 +51,14 @@ bool lottery_record_cell_node::init()
 	__setupCocosUI(entryNode);
 	return true;
 }
+
 /*************************工具生成begin*************************/
 void lottery_record_cell_node::__setupCocosUI(Node* rootNode)
 {
-	Node_avatar = static_cast<cocos2d::Node*>(rootNode->getChildByName("Node_avatar");
-	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back");
-	Text_time = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_time");
-	Text_nickname = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_nickname");
-	Text_money = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_money");
+	Node_avatar = static_cast<cocos2d::Node*>(rootNode->getChildByName("Node_avatar"));
+	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
+	Text_time = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_time"));
+	Text_nickname = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_nickname"));
+	Text_money = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_money"));
 }
 /*************************工具生成end*************************/

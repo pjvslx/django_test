@@ -11,7 +11,7 @@ using namespace ui;
 using namespace std;
 TestLayer::TestLayer()
   : Button_1(nullptr)
-  : Panel_1(nullptr)
+  , Panel_1(nullptr)
 {
 }
 
@@ -35,6 +35,7 @@ TestLayer* TestLayer::create()
         return nullptr;
     }
 }
+
 bool TestLayer::init()
 {
     if(!Layer::init())
@@ -47,10 +48,11 @@ bool TestLayer::init()
 	__setupCocosUI(entryNode);
 	return true;
 }
+
 /*************************工具生成begin*************************/
 void TestLayer::__setupCocosUI(Node* rootNode)
 {
-	Button_1 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_1");
-	Panel_1 = static_cast<cocos2d::ui::Layout*>(rootNode->getChildByName("Panel_1");
+	Button_1 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_1"));
+	Panel_1 = static_cast<cocos2d::ui::Layout*>(rootNode->getChildByName("Panel_1"));
 }
 /*************************工具生成end*************************/

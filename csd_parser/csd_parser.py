@@ -199,7 +199,7 @@ def output_h_file(csbfilename,arr,root_type):
             type = element.get_type()
             name = element.get_name()
             code_type = get_code_type(type)
-            fp.write("	" + code_type + " " + name + "\n")
+            fp.write("	" + code_type + " " + name + ";\n")
 
     fp.write("/*************************工具生成结束*************************/\n")
 
@@ -243,6 +243,8 @@ def output_cpp_file(csbfilename,arr,root_type):
             else:
                 fp.write("  , " + name + "(nullptr)\n")
 
+            index = index + 1
+
     fp.write("{\n")
     fp.write("}\n")
 
@@ -271,6 +273,8 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.write("    }\n")
     fp.write("}\n")
 
+    fp.write("\n")
+
     ##################init func#################
     fp.write("bool " + class_name + "::init()\n")
     fp.write("{\n")
@@ -289,6 +293,8 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.write("	__setupCocosUI(entryNode);\n")
     fp.write("	return true;\n")
     fp.write("}\n")
+
+    fp.write("\n")
 
     ##################__setupCocosUI func#################
     fp.write("/*************************工具生成begin*************************/\n")
@@ -311,7 +317,7 @@ def output_cpp_file(csbfilename,arr,root_type):
                     pos2 = path.find('|')
                     if pos2 < 0:
                         subname = path[0:len(path)]
-                        fp.write("->getChildByName(\"" + subname + "\");\n")
+                        fp.write("->getChildByName(\"" + subname + "\"));\n")
                     else:
                         subname = path[0:pos2]
                         fp.write("->getChildByName(\"" + subname + "\")")

@@ -27,7 +27,7 @@ private:
     void __setupCocosUI(cocos2d::Node* rootNode);
 private:
 /*************************工具生成开始*************************/
-	cocos2d::ui::Button* Button_1
-	cocos2d::ui::Layout* Panel_1
+	cocos2d::ui::Button* Button_1;
+	cocos2d::ui::Layout* Panel_1;
 /*************************工具生成结束*************************/
 };
