@@ -11,20 +11,20 @@ using namespace hydra;
 using namespace ui;
 using namespace std;
 
-TestLayer::TestLayer()
+Testlayer::Testlayer()
   : Button_1(nullptr)
   , Panel_1(nullptr)
 {
 }
 
 
-TestLayer::~TestLayer()
+Testlayer::~Testlayer()
 {
 }
 
-TestLayer* TestLayer::create()
+Testlayer* Testlayer::create()
 {
-    TestLayer *view = new TestLayer;
+    Testlayer *view = new Testlayer;
     if (view && view->init())
     {
         view->autorelease();
@@ -38,7 +38,7 @@ TestLayer* TestLayer::create()
     }
 }
 
-bool TestLayer::init()
+bool Testlayer::init()
 {
     if(!Layer::init())
     {
@@ -46,19 +46,19 @@ bool TestLayer::init()
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
 	/******************需要手动修改createNodeWithType的文件名******************/
-	auto entryNode = rm->createNodeWithType(TestLayer, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(Testlayer, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	__addUIEvent();
 	return true;
 }
 
-void TestLayer::__addUIEvent()
+void Testlayer::__addUIEvent()
 {
 }
 
 /*************************工具生成begin*************************/
-void TestLayer::__setupCocosUI(Node* rootNode)
+void Testlayer::__setupCocosUI(Node* rootNode)
 {
 	Button_1 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_1"));
 	Panel_1 = static_cast<cocos2d::ui::Layout*>(rootNode->getChildByName("Panel_1"));

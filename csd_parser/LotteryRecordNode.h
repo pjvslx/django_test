@@ -6,21 +6,21 @@
 namespace cocos2d {
     namespace ui {
         class ImageView;
-        class LoadingBar;
+        class ScrollView;
     }
 }
 
 class ResourceManager;
-class login_happy
-    : public cocos2d::Layer
+class LotteryRecordNode
+    : public cocos2d::Node
     , public hydra::ControlHandler
 {
 public:
-    static login_happy* create();
+    static LotteryRecordNode* create();
 
 private:
-    login_happy();
-    ~login_happy();
+    LotteryRecordNode();
+    ~LotteryRecordNode();
 
     bool init();
 /*************************工具生成函数*************************/
@@ -28,14 +28,11 @@ private:
     void __addUIEvent();
 private:
 /*************************工具生成开始*************************/
-	cocos2d::ui::ImageView* bg;
-	cocos2d::Sprite* light1;
-	cocos2d::Sprite* light2;
-	cocos2d::Sprite* light3;
-	cocos2d::Sprite* star;
-	cocos2d::Sprite* logo;
-	cocos2d::ui::ImageView* loading_bar_bg;
-	cocos2d::ui::LoadingBar* LoadingBar;
-	cocos2d::Sprite* flash;
+	cocos2d::ui::ImageView* Image_back;
+	cocos2d::ui::ImageView* Image_title;
+	cocos2d::ui::ImageView* Image_time;
+	cocos2d::ui::ImageView* Image_nickname;
+	cocos2d::ui::ImageView* Image_reward;
+	cocos2d::ui::ScrollView* ScrollView_1;
 /*************************工具生成结束*************************/
 };

@@ -11,7 +11,7 @@ using namespace hydra;
 using namespace ui;
 using namespace std;
 
-login_happy::login_happy()
+LoginHappy::LoginHappy()
   : bg(nullptr)
   , light1(nullptr)
   , light2(nullptr)
@@ -25,13 +25,13 @@ login_happy::login_happy()
 }
 
 
-login_happy::~login_happy()
+LoginHappy::~LoginHappy()
 {
 }
 
-login_happy* login_happy::create()
+LoginHappy* LoginHappy::create()
 {
-    login_happy *view = new login_happy;
+    LoginHappy *view = new LoginHappy;
     if (view && view->init())
     {
         view->autorelease();
@@ -45,7 +45,7 @@ login_happy* login_happy::create()
     }
 }
 
-bool login_happy::init()
+bool LoginHappy::init()
 {
     if(!Layer::init())
     {
@@ -53,19 +53,19 @@ bool login_happy::init()
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
 	/******************需要手动修改createNodeWithType的文件名******************/
-	auto entryNode = rm->createNodeWithType(login_happy, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(LoginHappy, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	__addUIEvent();
 	return true;
 }
 
-void login_happy::__addUIEvent()
+void LoginHappy::__addUIEvent()
 {
 }
 
 /*************************工具生成begin*************************/
-void login_happy::__setupCocosUI(Node* rootNode)
+void LoginHappy::__setupCocosUI(Node* rootNode)
 {
 	bg = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("bg"));
 	light1 = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("light1"));

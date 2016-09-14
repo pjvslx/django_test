@@ -11,7 +11,7 @@ using namespace hydra;
 using namespace ui;
 using namespace std;
 
-beast_jackpot::beast_jackpot()
+BeastJackpot::BeastJackpot()
   : Image_back(nullptr)
   , title_jcxx(nullptr)
   , Button_close(nullptr)
@@ -32,13 +32,13 @@ beast_jackpot::beast_jackpot()
 }
 
 
-beast_jackpot::~beast_jackpot()
+BeastJackpot::~BeastJackpot()
 {
 }
 
-beast_jackpot* beast_jackpot::create()
+BeastJackpot* BeastJackpot::create()
 {
-    beast_jackpot *view = new beast_jackpot;
+    BeastJackpot *view = new BeastJackpot;
     if (view && view->init())
     {
         view->autorelease();
@@ -52,7 +52,7 @@ beast_jackpot* beast_jackpot::create()
     }
 }
 
-bool beast_jackpot::init()
+bool BeastJackpot::init()
 {
     if(!Layer::init())
     {
@@ -60,19 +60,19 @@ bool beast_jackpot::init()
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
 	/******************需要手动修改createNodeWithType的文件名******************/
-	auto entryNode = rm->createNodeWithType(beast_jackpot, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(BeastJackpot, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	__addUIEvent();
 	return true;
 }
 
-void beast_jackpot::__addUIEvent()
+void BeastJackpot::__addUIEvent()
 {
 }
 
 /*************************工具生成begin*************************/
-void beast_jackpot::__setupCocosUI(Node* rootNode)
+void BeastJackpot::__setupCocosUI(Node* rootNode)
 {
 	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
 	title_jcxx = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("title_jcxx"));

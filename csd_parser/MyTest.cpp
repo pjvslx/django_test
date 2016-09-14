@@ -11,7 +11,7 @@ using namespace hydra;
 using namespace ui;
 using namespace std;
 
-MyTest::MyTest()
+Mytest::Mytest()
   : ScrollView_1(nullptr)
   , Image_1(nullptr)
   , AtlasLabel_1(nullptr)
@@ -19,13 +19,13 @@ MyTest::MyTest()
 }
 
 
-MyTest::~MyTest()
+Mytest::~Mytest()
 {
 }
 
-MyTest* MyTest::create()
+Mytest* Mytest::create()
 {
-    MyTest *view = new MyTest;
+    Mytest *view = new Mytest;
     if (view && view->init())
     {
         view->autorelease();
@@ -39,7 +39,7 @@ MyTest* MyTest::create()
     }
 }
 
-bool MyTest::init()
+bool Mytest::init()
 {
     if(!Node::init())
     {
@@ -47,19 +47,19 @@ bool MyTest::init()
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
 	/******************需要手动修改createNodeWithType的文件名******************/
-	auto entryNode = rm->createNodeWithType(MyTest, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(Mytest, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	__addUIEvent();
 	return true;
 }
 
-void MyTest::__addUIEvent()
+void Mytest::__addUIEvent()
 {
 }
 
 /*************************工具生成begin*************************/
-void MyTest::__setupCocosUI(Node* rootNode)
+void Mytest::__setupCocosUI(Node* rootNode)
 {
 	ScrollView_1 = static_cast<cocos2d::ui::ScrollView*>(rootNode->getChildByName("ScrollView_1"));
 	Image_1 = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("ScrollView_1")->getChildByName("Image_1"));

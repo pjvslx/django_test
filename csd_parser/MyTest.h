@@ -12,16 +12,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class MyTest
+class Mytest
     : public cocos2d::Node
     , public hydra::ControlHandler
 {
 public:
-    static MyTest* create();
+    static Mytest* create();
 
 private:
-    MyTest();
-    ~MyTest();
+    Mytest();
+    ~Mytest();
 
     bool init();
 /*************************工具生成函数*************************/

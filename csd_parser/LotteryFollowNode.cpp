@@ -11,7 +11,7 @@ using namespace hydra;
 using namespace ui;
 using namespace std;
 
-lottery_follow_node::lottery_follow_node()
+LotteryFollowNode::LotteryFollowNode()
   : Image_back(nullptr)
   , Button_level_1(nullptr)
   , Text_content(nullptr)
@@ -25,13 +25,13 @@ lottery_follow_node::lottery_follow_node()
 }
 
 
-lottery_follow_node::~lottery_follow_node()
+LotteryFollowNode::~LotteryFollowNode()
 {
 }
 
-lottery_follow_node* lottery_follow_node::create()
+LotteryFollowNode* LotteryFollowNode::create()
 {
-    lottery_follow_node *view = new lottery_follow_node;
+    LotteryFollowNode *view = new LotteryFollowNode;
     if (view && view->init())
     {
         view->autorelease();
@@ -45,7 +45,7 @@ lottery_follow_node* lottery_follow_node::create()
     }
 }
 
-bool lottery_follow_node::init()
+bool LotteryFollowNode::init()
 {
     if(!Node::init())
     {
@@ -53,19 +53,19 @@ bool lottery_follow_node::init()
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
 	/******************需要手动修改createNodeWithType的文件名******************/
-	auto entryNode = rm->createNodeWithType(lottery_follow_node, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(LotteryFollowNode, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	__addUIEvent();
 	return true;
 }
 
-void lottery_follow_node::__addUIEvent()
+void LotteryFollowNode::__addUIEvent()
 {
 }
 
 /*************************工具生成begin*************************/
-void lottery_follow_node::__setupCocosUI(Node* rootNode)
+void LotteryFollowNode::__setupCocosUI(Node* rootNode)
 {
 	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
 	Button_level_1 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_1"));

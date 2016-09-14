@@ -11,16 +11,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class lottery_record_cell_node
+class LotteryRecordCellNode
     : public cocos2d::Node
     , public hydra::ControlHandler
 {
 public:
-    static lottery_record_cell_node* create();
+    static LotteryRecordCellNode* create();
 
 private:
-    lottery_record_cell_node();
-    ~lottery_record_cell_node();
+    LotteryRecordCellNode();
+    ~LotteryRecordCellNode();
 
     bool init();
 /*************************工具生成函数*************************/

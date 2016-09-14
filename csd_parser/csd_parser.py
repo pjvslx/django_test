@@ -129,8 +129,15 @@ def parse_file(filename):
 def output_h_file(csbfilename,arr,root_type):
     print "output_h_file filename = " + csbfilename
     filename = csbfilename[0:len(csbfilename) - 4]
-    h_filename = filename + ".h"
-    class_name = filename
+
+    name_list = filename.split("_")
+
+    class_name = ""
+
+    for l in name_list:
+        class_name = class_name + l.title()
+
+    h_filename = class_name + ".h"
     print "filename = " , h_filename
 
     fp = open(h_filename,"w+")
@@ -216,8 +223,11 @@ def output_h_file(csbfilename,arr,root_type):
 def output_cpp_file(csbfilename,arr,root_type):
     print "output_cpp_file filename = " + csbfilename
     filename = csbfilename[0:len(csbfilename) - 4]
-    class_name = filename
-    cpp_filename = filename + ".cpp"
+    name_list = filename.split("_")
+    class_name = ""
+    for l in name_list:
+        class_name = class_name + l.title()
+    cpp_filename = class_name + ".cpp"
     h_filename = filename + ".h"
     fp = open(cpp_filename,"w+")
     fp.write("#include " + "\"" + h_filename + "\"\n")

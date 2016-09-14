@@ -13,16 +13,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class beast_jackpot
+class BeastJackpot
     : public cocos2d::Layer
     , public hydra::ControlHandler
 {
 public:
-    static beast_jackpot* create();
+    static BeastJackpot* create();
 
 private:
-    beast_jackpot();
-    ~beast_jackpot();
+    BeastJackpot();
+    ~BeastJackpot();
 
     bool init();
 /*************************工具生成函数*************************/

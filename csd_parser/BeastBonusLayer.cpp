@@ -11,7 +11,7 @@ using namespace hydra;
 using namespace ui;
 using namespace std;
 
-beast_bonus_layer::beast_bonus_layer()
+BeastBonusLayer::BeastBonusLayer()
   : Image_back(nullptr)
   , Text_winner_nick(nullptr)
   , Node_winner_avatar(nullptr)
@@ -35,13 +35,13 @@ beast_bonus_layer::beast_bonus_layer()
 }
 
 
-beast_bonus_layer::~beast_bonus_layer()
+BeastBonusLayer::~BeastBonusLayer()
 {
 }
 
-beast_bonus_layer* beast_bonus_layer::create()
+BeastBonusLayer* BeastBonusLayer::create()
 {
-    beast_bonus_layer *view = new beast_bonus_layer;
+    BeastBonusLayer *view = new BeastBonusLayer;
     if (view && view->init())
     {
         view->autorelease();
@@ -55,7 +55,7 @@ beast_bonus_layer* beast_bonus_layer::create()
     }
 }
 
-bool beast_bonus_layer::init()
+bool BeastBonusLayer::init()
 {
     if(!Layer::init())
     {
@@ -63,19 +63,19 @@ bool beast_bonus_layer::init()
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
 	/******************需要手动修改createNodeWithType的文件名******************/
-	auto entryNode = rm->createNodeWithType(beast_bonus_layer, ResourceType::kResourceTypeCSB);
+	auto entryNode = rm->createNodeWithType(BeastBonusLayer, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
 	__addUIEvent();
 	return true;
 }
 
-void beast_bonus_layer::__addUIEvent()
+void BeastBonusLayer::__addUIEvent()
 {
 }
 
 /*************************工具生成begin*************************/
-void beast_bonus_layer::__setupCocosUI(Node* rootNode)
+void BeastBonusLayer::__setupCocosUI(Node* rootNode)
 {
 	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
 	Text_winner_nick = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_winner_nick"));

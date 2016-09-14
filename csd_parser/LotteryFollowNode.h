@@ -12,16 +12,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class lottery_follow_node
+class LotteryFollowNode
     : public cocos2d::Node
     , public hydra::ControlHandler
 {
 public:
-    static lottery_follow_node* create();
+    static LotteryFollowNode* create();
 
 private:
-    lottery_follow_node();
-    ~lottery_follow_node();
+    LotteryFollowNode();
+    ~LotteryFollowNode();
 
     bool init();
 /*************************工具生成函数*************************/

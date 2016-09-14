@@ -13,16 +13,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class lottery_layer
+class LotteryLayer
     : public cocos2d::Layer
     , public hydra::ControlHandler
 {
 public:
-    static lottery_layer* create();
+    static LotteryLayer* create();
 
 private:
-    lottery_layer();
-    ~lottery_layer();
+    LotteryLayer();
+    ~LotteryLayer();
 
     bool init();
 /*************************工具生成函数*************************/

@@ -11,16 +11,16 @@ namespace cocos2d {
 }
 
 class ResourceManager;
-class TestLayer
+class Testlayer
     : public cocos2d::Layer
     , public hydra::ControlHandler
 {
 public:
-    static TestLayer* create();
+    static Testlayer* create();
 
 private:
-    TestLayer();
-    ~TestLayer();
+    Testlayer();
+    ~Testlayer();
 
     bool init();
 /*************************工具生成函数*************************/
