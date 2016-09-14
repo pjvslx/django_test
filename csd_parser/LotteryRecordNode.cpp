@@ -12,12 +12,12 @@ using namespace ui;
 using namespace std;
 
 LotteryRecordNode::LotteryRecordNode()
-  : Image_back(nullptr)
-  , Image_title(nullptr)
-  , Image_time(nullptr)
-  , Image_nickname(nullptr)
-  , Image_reward(nullptr)
-  , ScrollView_1(nullptr)
+  : m_Image_back(nullptr)
+  , m_Image_title(nullptr)
+  , m_Image_time(nullptr)
+  , m_Image_nickname(nullptr)
+  , m_Image_reward(nullptr)
+  , m_ScrollView_1(nullptr)
 {
 }
 
@@ -74,11 +74,11 @@ void LotteryRecordNode::onExit()
 /*************************工具生成begin*************************/
 void LotteryRecordNode::__setupCocosUI(Node* rootNode)
 {
-	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
-	Image_title = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_title"));
-	Image_time = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_time"));
-	Image_nickname = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_nickname"));
-	Image_reward = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_reward"));
-	ScrollView_1 = static_cast<cocos2d::ui::ScrollView*>(rootNode->getChildByName("ScrollView_1"));
+	m_Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
+	m_Image_title = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_title"));
+	m_Image_time = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_time"));
+	m_Image_nickname = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_nickname"));
+	m_Image_reward = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_reward"));
+	m_ScrollView_1 = static_cast<cocos2d::ui::ScrollView*>(rootNode->getChildByName("ScrollView_1"));
 }
 /*************************工具生成end*************************/

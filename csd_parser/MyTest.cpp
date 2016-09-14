@@ -12,9 +12,9 @@ using namespace ui;
 using namespace std;
 
 Mytest::Mytest()
-  : ScrollView_1(nullptr)
-  , Image_1(nullptr)
-  , AtlasLabel_1(nullptr)
+  : m_ScrollView_1(nullptr)
+  , m_Image_1(nullptr)
+  , m_AtlasLabel_1(nullptr)
 {
 }
 
@@ -71,8 +71,8 @@ void Mytest::onExit()
 /*************************工具生成begin*************************/
 void Mytest::__setupCocosUI(Node* rootNode)
 {
-	ScrollView_1 = static_cast<cocos2d::ui::ScrollView*>(rootNode->getChildByName("ScrollView_1"));
-	Image_1 = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("ScrollView_1")->getChildByName("Image_1"));
-	AtlasLabel_1 = static_cast<cocos2d::ui::TextAtlas*>(rootNode->getChildByName("ScrollView_1")->getChildByName("AtlasLabel_1"));
+	m_ScrollView_1 = static_cast<cocos2d::ui::ScrollView*>(rootNode->getChildByName("ScrollView_1"));
+	m_Image_1 = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("ScrollView_1")->getChildByName("Image_1"));
+	m_AtlasLabel_1 = static_cast<cocos2d::ui::TextAtlas*>(rootNode->getChildByName("ScrollView_1")->getChildByName("AtlasLabel_1"));
 }
 /*************************工具生成end*************************/

@@ -210,7 +210,7 @@ def output_h_file(csbfilename,arr,root_type):
             type = element.get_type()
             name = element.get_name()
             code_type = get_code_type(type)
-            fp.write("	" + code_type + " " + name + ";\n")
+            fp.write("	" + code_type + " " + "m_" +  name + ";\n")
 
     fp.write("/*************************工具生成结束*************************/\n")
 
@@ -257,9 +257,9 @@ def output_cpp_file(csbfilename,arr,root_type):
         if is_ui_ignore(element) == False:
             name = element.get_name()
             if index == 1:
-                fp.write("  : " + name + "(nullptr)\n")
+                fp.write("  : " + "m_" +  name + "(nullptr)\n")
             else:
-                fp.write("  , " + name + "(nullptr)\n")
+                fp.write("  , " + "m_" + name + "(nullptr)\n")
 
             index = index + 1
 
@@ -354,7 +354,7 @@ def output_cpp_file(csbfilename,arr,root_type):
             type = element.get_type()
             code_type = get_code_type(type)
             path = element.get_path()
-            fp.write("	" + name + " = static_cast<" + code_type + ">(rootNode")
+            fp.write("	m_" + name + " = static_cast<" + code_type + ">(rootNode")
 
             while 1:
                 pos1 = path.find('|')

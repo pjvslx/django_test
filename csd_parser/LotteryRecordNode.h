@@ -22,8 +22,8 @@ private:
     LotteryRecordNode();
     ~LotteryRecordNode();
 
-    bool init();
 /*************************工具生成函数开始*************************/
+    bool init();
     void __setupCocosUI(cocos2d::Node* rootNode);
     void __addUIEvent();
     virtual void onEnter();
@@ -31,11 +31,11 @@ private:
 /*************************工具生成函数结束*************************/
 private:
 /*************************工具生成开始*************************/
-	cocos2d::ui::ImageView* Image_back;
-	cocos2d::ui::ImageView* Image_title;
-	cocos2d::ui::ImageView* Image_time;
-	cocos2d::ui::ImageView* Image_nickname;
-	cocos2d::ui::ImageView* Image_reward;
-	cocos2d::ui::ScrollView* ScrollView_1;
+	cocos2d::ui::ImageView* m_Image_back;
+	cocos2d::ui::ImageView* m_Image_title;
+	cocos2d::ui::ImageView* m_Image_time;
+	cocos2d::ui::ImageView* m_Image_nickname;
+	cocos2d::ui::ImageView* m_Image_reward;
+	cocos2d::ui::ScrollView* m_ScrollView_1;
 /*************************工具生成结束*************************/
 };

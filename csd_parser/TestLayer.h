@@ -22,8 +22,8 @@ private:
     Testlayer();
     ~Testlayer();
 
-    bool init();
 /*************************工具生成函数开始*************************/
+    bool init();
     void __setupCocosUI(cocos2d::Node* rootNode);
     void __addUIEvent();
     virtual void onEnter();
@@ -31,7 +31,7 @@ private:
 /*************************工具生成函数结束*************************/
 private:
 /*************************工具生成开始*************************/
-	cocos2d::ui::Button* Button_1;
-	cocos2d::ui::Layout* Panel_1;
+	cocos2d::ui::Button* m_Button_1;
+	cocos2d::ui::Layout* m_Panel_1;
 /*************************工具生成结束*************************/
 };

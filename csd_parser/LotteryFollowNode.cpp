@@ -12,15 +12,15 @@ using namespace ui;
 using namespace std;
 
 LotteryFollowNode::LotteryFollowNode()
-  : Image_back(nullptr)
-  , Button_level_1(nullptr)
-  , Text_content(nullptr)
-  , Button_level_2(nullptr)
-  , Text_content(nullptr)
-  , Button_level_3(nullptr)
-  , Text_content(nullptr)
-  , Button_level_4(nullptr)
-  , Text_content(nullptr)
+  : m_Image_back(nullptr)
+  , m_Button_level_1(nullptr)
+  , m_Text_content(nullptr)
+  , m_Button_level_2(nullptr)
+  , m_Text_content(nullptr)
+  , m_Button_level_3(nullptr)
+  , m_Text_content(nullptr)
+  , m_Button_level_4(nullptr)
+  , m_Text_content(nullptr)
 {
 }
 
@@ -77,14 +77,14 @@ void LotteryFollowNode::onExit()
 /*************************工具生成begin*************************/
 void LotteryFollowNode::__setupCocosUI(Node* rootNode)
 {
-	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
-	Button_level_1 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_1"));
-	Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_1")->getChildByName("Text_content"));
-	Button_level_2 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_2"));
-	Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_2")->getChildByName("Text_content"));
-	Button_level_3 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_3"));
-	Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_3")->getChildByName("Text_content"));
-	Button_level_4 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_4"));
-	Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_4")->getChildByName("Text_content"));
+	m_Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
+	m_Button_level_1 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_1"));
+	m_Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_1")->getChildByName("Text_content"));
+	m_Button_level_2 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_2"));
+	m_Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_2")->getChildByName("Text_content"));
+	m_Button_level_3 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_3"));
+	m_Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_3")->getChildByName("Text_content"));
+	m_Button_level_4 = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_level_4"));
+	m_Text_content = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Button_level_4")->getChildByName("Text_content"));
 }
 /*************************工具生成end*************************/

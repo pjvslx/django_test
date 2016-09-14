@@ -12,22 +12,22 @@ using namespace ui;
 using namespace std;
 
 BeastJackpot::BeastJackpot()
-  : Image_back(nullptr)
-  , title_jcxx(nullptr)
-  , Button_close(nullptr)
-  , Button_record(nullptr)
-  , Image_top(nullptr)
-  , icon_coin(nullptr)
-  , AtlasLabel_jackpot_num(nullptr)
-  , Image_down(nullptr)
-  , last_winner(nullptr)
-  , Node_avatar(nullptr)
-  , Text_nick(nullptr)
-  , Text_time(nullptr)
-  , AtlasLabel_win_num(nullptr)
-  , wan_text(nullptr)
-  , Text_desc(nullptr)
-  , Text_rule(nullptr)
+  : m_Image_back(nullptr)
+  , m_title_jcxx(nullptr)
+  , m_Button_close(nullptr)
+  , m_Button_record(nullptr)
+  , m_Image_top(nullptr)
+  , m_icon_coin(nullptr)
+  , m_AtlasLabel_jackpot_num(nullptr)
+  , m_Image_down(nullptr)
+  , m_last_winner(nullptr)
+  , m_Node_avatar(nullptr)
+  , m_Text_nick(nullptr)
+  , m_Text_time(nullptr)
+  , m_AtlasLabel_win_num(nullptr)
+  , m_wan_text(nullptr)
+  , m_Text_desc(nullptr)
+  , m_Text_rule(nullptr)
 {
 }
 
@@ -84,21 +84,21 @@ void BeastJackpot::onExit()
 /*************************工具生成begin*************************/
 void BeastJackpot::__setupCocosUI(Node* rootNode)
 {
-	Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
-	title_jcxx = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("title_jcxx"));
-	Button_close = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Image_back")->getChildByName("Button_close"));
-	Button_record = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Image_back")->getChildByName("Button_record"));
-	Image_top = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_top"));
-	icon_coin = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("Image_top")->getChildByName("icon_coin"));
-	AtlasLabel_jackpot_num = static_cast<cocos2d::ui::TextAtlas*>(rootNode->getChildByName("Image_back")->getChildByName("Image_top")->getChildByName("AtlasLabel_jackpot_num"));
-	Image_down = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down"));
-	last_winner = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("last_winner"));
-	Node_avatar = static_cast<cocos2d::Node*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("Node_avatar"));
-	Text_nick = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("Text_nick"));
-	Text_time = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("Text_time"));
-	AtlasLabel_win_num = static_cast<cocos2d::ui::TextAtlas*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("AtlasLabel_win_num"));
-	wan_text = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("wan_text"));
-	Text_desc = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_desc"));
-	Text_rule = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_rule"));
+	m_Image_back = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back"));
+	m_title_jcxx = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("title_jcxx"));
+	m_Button_close = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Image_back")->getChildByName("Button_close"));
+	m_Button_record = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Image_back")->getChildByName("Button_record"));
+	m_Image_top = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_top"));
+	m_icon_coin = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("Image_top")->getChildByName("icon_coin"));
+	m_AtlasLabel_jackpot_num = static_cast<cocos2d::ui::TextAtlas*>(rootNode->getChildByName("Image_back")->getChildByName("Image_top")->getChildByName("AtlasLabel_jackpot_num"));
+	m_Image_down = static_cast<cocos2d::ui::ImageView*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down"));
+	m_last_winner = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("last_winner"));
+	m_Node_avatar = static_cast<cocos2d::Node*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("Node_avatar"));
+	m_Text_nick = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("Text_nick"));
+	m_Text_time = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("Text_time"));
+	m_AtlasLabel_win_num = static_cast<cocos2d::ui::TextAtlas*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("AtlasLabel_win_num"));
+	m_wan_text = static_cast<cocos2d::Sprite*>(rootNode->getChildByName("Image_back")->getChildByName("Image_down")->getChildByName("wan_text"));
+	m_Text_desc = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_desc"));
+	m_Text_rule = static_cast<cocos2d::ui::Text*>(rootNode->getChildByName("Image_back")->getChildByName("Text_rule"));
 }
 /*************************工具生成end*************************/
