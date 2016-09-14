@@ -5,10 +5,12 @@
 #include "OS.h"
 #include "UIHelperHydra.h"
 #include "Localization.h"
+
 USING_NS_CC;
 using namespace hydra;
 using namespace ui;
 using namespace std;
+
 beast_jackpot::beast_jackpot()
   : Image_back(nullptr)
   , title_jcxx(nullptr)
@@ -57,10 +59,16 @@ bool beast_jackpot::init()
         return false;
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
+	/******************需要手动修改createNodeWithType的文件名******************/
 	auto entryNode = rm->createNodeWithType(beast_jackpot, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
+	__addUIEvent();
 	return true;
+}
+
+void beast_jackpot::__addUIEvent()
+{
 }
 
 /*************************工具生成begin*************************/

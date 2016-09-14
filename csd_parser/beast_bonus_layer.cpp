@@ -5,10 +5,12 @@
 #include "OS.h"
 #include "UIHelperHydra.h"
 #include "Localization.h"
+
 USING_NS_CC;
 using namespace hydra;
 using namespace ui;
 using namespace std;
+
 beast_bonus_layer::beast_bonus_layer()
   : Image_back(nullptr)
   , Text_winner_nick(nullptr)
@@ -60,10 +62,16 @@ bool beast_bonus_layer::init()
         return false;
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
+	/******************需要手动修改createNodeWithType的文件名******************/
 	auto entryNode = rm->createNodeWithType(beast_bonus_layer, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
+	__addUIEvent();
 	return true;
+}
+
+void beast_bonus_layer::__addUIEvent()
+{
 }
 
 /*************************工具生成begin*************************/

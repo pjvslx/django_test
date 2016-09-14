@@ -5,10 +5,12 @@
 #include "OS.h"
 #include "UIHelperHydra.h"
 #include "Localization.h"
+
 USING_NS_CC;
 using namespace hydra;
 using namespace ui;
 using namespace std;
+
 lottery_follow_node::lottery_follow_node()
   : Image_back(nullptr)
   , Button_level_1(nullptr)
@@ -50,10 +52,16 @@ bool lottery_follow_node::init()
         return false;
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
+	/******************需要手动修改createNodeWithType的文件名******************/
 	auto entryNode = rm->createNodeWithType(lottery_follow_node, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
+	__addUIEvent();
 	return true;
+}
+
+void lottery_follow_node::__addUIEvent()
+{
 }
 
 /*************************工具生成begin*************************/

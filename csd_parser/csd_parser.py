@@ -189,6 +189,7 @@ def output_h_file(csbfilename,arr,root_type):
     fp.write("    bool init();\n")
     fp.write("/*************************工具生成函数*************************/\n")
     fp.write("    void __setupCocosUI(cocos2d::Node* rootNode);\n")
+    fp.write("    void __addUIEvent();\n")
     fp.write("private:\n")
     ##########################write gui member here##########################
 
@@ -227,10 +228,14 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.write("#include \"UIHelperHydra.h\"\n")
     fp.write("#include \"Localization.h\"\n")
 
+    fp.write("\n")
+
     fp.write("USING_NS_CC;\n")
     fp.write("using namespace hydra;\n")
     fp.write("using namespace ui;\n")
     fp.write("using namespace std;\n")
+
+    fp.write("\n")
 
     ##################construct#################
     fp.write(class_name + "::" + class_name + "()\n")
@@ -288,10 +293,18 @@ def output_cpp_file(csbfilename,arr,root_type):
     fp.write("        return false;\n")
     fp.write("    }\n")
     fp.write("	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent(\"resource_manager\"));\n")
+    fp.write("	/******************需要手动修改createNodeWithType的文件名******************/\n")
     fp.write("	auto entryNode = rm->createNodeWithType(" + class_name + ", ResourceType::kResourceTypeCSB);\n")
     fp.write("	addChild(entryNode);\n")
     fp.write("	__setupCocosUI(entryNode);\n")
+    fp.write("	__addUIEvent();\n")
     fp.write("	return true;\n")
+    fp.write("}\n")
+
+    fp.write("\n")
+
+    fp.write("void " + class_name + "::__addUIEvent()\n")
+    fp.write("{\n")
     fp.write("}\n")
 
     fp.write("\n")

@@ -5,10 +5,12 @@
 #include "OS.h"
 #include "UIHelperHydra.h"
 #include "Localization.h"
+
 USING_NS_CC;
 using namespace hydra;
 using namespace ui;
 using namespace std;
+
 lottery_record_cell_node::lottery_record_cell_node()
   : Node_avatar(nullptr)
   , Image_back(nullptr)
@@ -46,10 +48,16 @@ bool lottery_record_cell_node::init()
         return false;
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
+	/******************需要手动修改createNodeWithType的文件名******************/
 	auto entryNode = rm->createNodeWithType(lottery_record_cell_node, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
+	__addUIEvent();
 	return true;
+}
+
+void lottery_record_cell_node::__addUIEvent()
+{
 }
 
 /*************************工具生成begin*************************/

@@ -5,10 +5,12 @@
 #include "OS.h"
 #include "UIHelperHydra.h"
 #include "Localization.h"
+
 USING_NS_CC;
 using namespace hydra;
 using namespace ui;
 using namespace std;
+
 MyTest::MyTest()
   : ScrollView_1(nullptr)
   , Image_1(nullptr)
@@ -44,10 +46,16 @@ bool MyTest::init()
         return false;
     }
 	ResourceManager* rm = static_cast<ResourceManager*>(hydra::ComponentManager::instance()->getComponent("resource_manager"));
+	/******************需要手动修改createNodeWithType的文件名******************/
 	auto entryNode = rm->createNodeWithType(MyTest, ResourceType::kResourceTypeCSB);
 	addChild(entryNode);
 	__setupCocosUI(entryNode);
+	__addUIEvent();
 	return true;
+}
+
+void MyTest::__addUIEvent()
+{
 }
 
 /*************************工具生成begin*************************/
