@@ -1,4 +1,4 @@
-#include "login_happy.h"
+#include "LoginHappy.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

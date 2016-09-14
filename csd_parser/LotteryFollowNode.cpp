@@ -1,4 +1,4 @@
-#include "lottery_follow_node.h"
+#include "LotteryFollowNode.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

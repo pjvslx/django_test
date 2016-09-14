@@ -1,4 +1,4 @@
-#include "TestLayer.h"
+#include "Testlayer.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

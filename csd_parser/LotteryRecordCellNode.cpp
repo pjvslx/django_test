@@ -1,4 +1,4 @@
-#include "lottery_record_cell_node.h"
+#include "LotteryRecordCellNode.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

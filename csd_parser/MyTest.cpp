@@ -1,4 +1,4 @@
-#include "MyTest.h"
+#include "Mytest.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

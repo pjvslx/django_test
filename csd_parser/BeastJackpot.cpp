@@ -1,4 +1,4 @@
-#include "beast_jackpot.h"
+#include "BeastJackpot.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

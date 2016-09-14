@@ -228,7 +228,7 @@ def output_cpp_file(csbfilename,arr,root_type):
     for l in name_list:
         class_name = class_name + l.title()
     cpp_filename = class_name + ".cpp"
-    h_filename = filename + ".h"
+    h_filename = class_name + ".h"
     fp = open(cpp_filename,"w+")
     fp.write("#include " + "\"" + h_filename + "\"\n")
     fp.write("#include \"ComponentManager.h\"\n")

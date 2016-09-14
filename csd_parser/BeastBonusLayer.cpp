@@ -1,4 +1,4 @@
-#include "beast_bonus_layer.h"
+#include "BeastBonusLayer.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"

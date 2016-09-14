@@ -1,4 +1,4 @@
-#include "lottery_layer.h"
+#include "LotteryLayer.h"
 #include "ComponentManager.h"
 #include "ResourceManager.h"
 #include "ui/CocosGUI.h"
