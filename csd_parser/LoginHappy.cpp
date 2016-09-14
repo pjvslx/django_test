@@ -64,6 +64,16 @@ void LoginHappy::__addUIEvent()
 {
 }
 
+void LoginHappy::onEnter()
+{
+    Layer::onEnter();
+}
+
+void LoginHappy::onExit()
+{
+    Layer::onExit();
+}
+
 /*************************工具生成begin*************************/
 void LoginHappy::__setupCocosUI(Node* rootNode)
 {

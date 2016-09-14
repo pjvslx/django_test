@@ -57,6 +57,16 @@ void Testlayer::__addUIEvent()
 {
 }
 
+void Testlayer::onEnter()
+{
+    Layer::onEnter();
+}
+
+void Testlayer::onExit()
+{
+    Layer::onExit();
+}
+
 /*************************工具生成begin*************************/
 void Testlayer::__setupCocosUI(Node* rootNode)
 {

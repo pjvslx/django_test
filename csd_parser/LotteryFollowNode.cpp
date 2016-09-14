@@ -64,6 +64,16 @@ void LotteryFollowNode::__addUIEvent()
 {
 }
 
+void LotteryFollowNode::onEnter()
+{
+    Node::onEnter();
+}
+
+void LotteryFollowNode::onExit()
+{
+    Node::onExit();
+}
+
 /*************************工具生成begin*************************/
 void LotteryFollowNode::__setupCocosUI(Node* rootNode)
 {

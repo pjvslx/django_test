@@ -71,6 +71,16 @@ void BeastJackpot::__addUIEvent()
 {
 }
 
+void BeastJackpot::onEnter()
+{
+    Layer::onEnter();
+}
+
+void BeastJackpot::onExit()
+{
+    Layer::onExit();
+}
+
 /*************************工具生成begin*************************/
 void BeastJackpot::__setupCocosUI(Node* rootNode)
 {

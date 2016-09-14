@@ -74,6 +74,16 @@ void BeastBonusLayer::__addUIEvent()
 {
 }
 
+void BeastBonusLayer::onEnter()
+{
+    Layer::onEnter();
+}
+
+void BeastBonusLayer::onExit()
+{
+    Layer::onExit();
+}
+
 /*************************工具生成begin*************************/
 void BeastBonusLayer::__setupCocosUI(Node* rootNode)
 {

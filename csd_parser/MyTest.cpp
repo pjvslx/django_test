@@ -58,6 +58,16 @@ void Mytest::__addUIEvent()
 {
 }
 
+void Mytest::onEnter()
+{
+    Node::onEnter();
+}
+
+void Mytest::onExit()
+{
+    Node::onExit();
+}
+
 /*************************工具生成begin*************************/
 void Mytest::__setupCocosUI(Node* rootNode)
 {

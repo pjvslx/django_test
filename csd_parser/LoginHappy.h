@@ -23,9 +23,12 @@ private:
     ~LoginHappy();
 
     bool init();
-/*************************工具生成函数*************************/
+/*************************工具生成函数开始*************************/
     void __setupCocosUI(cocos2d::Node* rootNode);
     void __addUIEvent();
+    virtual void onEnter();
+    virtual void onExit();
+/*************************工具生成函数结束*************************/
 private:
 /*************************工具生成开始*************************/
 	cocos2d::ui::ImageView* bg;

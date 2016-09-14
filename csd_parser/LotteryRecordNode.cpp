@@ -61,6 +61,16 @@ void LotteryRecordNode::__addUIEvent()
 {
 }
 
+void LotteryRecordNode::onEnter()
+{
+    Node::onEnter();
+}
+
+void LotteryRecordNode::onExit()
+{
+    Node::onExit();
+}
+
 /*************************工具生成begin*************************/
 void LotteryRecordNode::__setupCocosUI(Node* rootNode)
 {

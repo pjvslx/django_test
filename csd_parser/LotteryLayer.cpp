@@ -123,6 +123,16 @@ void LotteryLayer::__addUIEvent()
 {
 }
 
+void LotteryLayer::onEnter()
+{
+    Layer::onEnter();
+}
+
+void LotteryLayer::onExit()
+{
+    Layer::onExit();
+}
+
 /*************************工具生成begin*************************/
 void LotteryLayer::__setupCocosUI(Node* rootNode)
 {

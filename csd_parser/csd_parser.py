@@ -194,9 +194,12 @@ def output_h_file(csbfilename,arr,root_type):
     fp.write("    ~" + class_name + "();\n")
     fp.write("\n")
     fp.write("    bool init();\n")
-    fp.write("/*************************工具生成函数*************************/\n")
+    fp.write("/*************************工具生成函数开始*************************/\n")
     fp.write("    void __setupCocosUI(cocos2d::Node* rootNode);\n")
     fp.write("    void __addUIEvent();\n")
+    fp.write("    virtual void onEnter();\n")
+    fp.write("    virtual void onExit();\n")
+    fp.write("/*************************工具生成函数结束*************************/\n")
     fp.write("private:\n")
     ##########################write gui member here##########################
 
@@ -315,6 +318,28 @@ def output_cpp_file(csbfilename,arr,root_type):
 
     fp.write("void " + class_name + "::__addUIEvent()\n")
     fp.write("{\n")
+    fp.write("}\n")
+
+    fp.write("\n")
+
+    ##################onEnter func#################
+    fp.write("void " + class_name + "::onEnter()\n")
+    fp.write("{\n")
+    if cmp(root_type, "Layer") == 0:
+        fp.write("    Layer::onEnter();\n")
+    elif cmp(root_type, "Node") == 0:
+        fp.write("    Node::onEnter();\n")
+    fp.write("}\n")
+
+    fp.write("\n")
+
+    ##################onExit func#################
+    fp.write("void " + class_name + "::onExit()\n")
+    fp.write("{\n")
+    if cmp(root_type, "Layer") == 0:
+        fp.write("    Layer::onExit();\n")
+    elif cmp(root_type, "Node") == 0:
+        fp.write("    Node::onExit();\n")
     fp.write("}\n")
 
     fp.write("\n")
